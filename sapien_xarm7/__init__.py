@@ -89,7 +89,7 @@ class XArm7(sapien.Widget):
 
     def set_arm_pd(self, ps, ds, limits):
         for j, p, d, l in zip(self.arm_joints, ps, ds, limits):
-            j.set_drive_properties(p, d, l, "acceleration")
+            j.set_drive_property(p, d, l, "acceleration")
 
     def set_arm_target(self, target):
         for t, j in zip(target, self.arm_joints):
@@ -102,8 +102,8 @@ class XArm7(sapien.Widget):
     def set_gripper_pd(self, p, d, limit):
         lok = self.robot.find_link_by_name("left_outer_knuckle")
         rok = self.robot.find_link_by_name("right_outer_knuckle")
-        self.left_gripper_joint.set_drive_properties(p, d, limit, "acceleration")
-        self.right_gripper_joint.set_drive_properties(p, d, limit, "acceleration")
+        self.left_gripper_joint.set_drive_property(p, d, limit, "acceleration")
+        self.right_gripper_joint.set_drive_property(p, d, limit, "acceleration")
 
     def set_gripper_target(self, target):
         self.left_gripper_joint.set_drive_target(target)
