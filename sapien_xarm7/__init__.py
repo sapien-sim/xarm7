@@ -13,10 +13,10 @@ class XArm7(sapien.Widget):
             warnings.warn(
                 "TGS is not enabled in scene. TGS is recommended for simulating loop joints."
             )
-        if scene.physx_system.config.solver_iterations < 15:
-            warnings.warn(
-                f"Solver iteration ({scene.physx_system.config.solver_iterations}) of this sceen is probably too small for simulating XArm"
-            )
+        # if scene.physx_system.config.solver_iterations < 15:
+        #     warnings.warn(
+        #         f"Solver iteration ({scene.physx_system.config.solver_iterations}) of this sceen is probably too small for simulating XArm"
+        #     )
 
         loader = scene.create_urdf_loader()
         loader.set_material(0.3, 0.3, 0.0)
